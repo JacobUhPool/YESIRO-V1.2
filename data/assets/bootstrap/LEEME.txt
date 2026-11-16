@@ -1,0 +1,14 @@
+BOOTSTRAP — ¿DÓNDE ESTÁ Y CÓMO SE USA?
+======================================
+Por defecto Bootstrap se carga desde INTERNET (CDN). Esas dos líneas están en:
+    includes/funciones.php  →  funciones bootstrap_css() y bootstrap_js()
+Se mandan llamar desde:
+    includes/encabezado.php (CSS)  y  includes/pie.php (JavaScript)
+
+PARA USARLO SIN INTERNET (por si en el salón no hay red):
+ 1) Descarga Bootstrap 5.3 desde https://getbootstrap.com/docs/5.3/getting-started/download/
+ 2) Copia en ESTA carpeta (assets/bootstrap/) estos dos archivos, con estos nombres:
+        bootstrap.min.css
+        bootstrap.bundle.min.js
+ 3) Abre config/config.php y cambia:   define('BOOTSTRAP_LOCAL', true);
+Listo: todo el sistema (incluido el login) usará los archivos locales.

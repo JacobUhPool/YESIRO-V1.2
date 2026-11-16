@@ -1,0 +1,86 @@
+/* =====================================================================
+   assets/css/estilos.css
+   Estilos PROPIOS del sistema (colores y estructura del marco).
+   El diseño de formularios, tablas y botones lo hace Bootstrap.
+   ===================================================================== */
+
+/* ---- Colores del sistema: cámbialos aquí y se actualiza todo ---- */
+:root {
+    --cafe: #673f21;          /* encabezado, títulos y botones */
+    --cafe-oscuro: #4a2a12;   /* botón al pasar el mouse */
+    --crema: #f1ebd8;         /* menú: al pasar el mouse */
+    --beige: #dfdfd3;         /* fondo del menú lateral */
+}
+
+/* ---- Estructura: encabezado arriba, cuerpo en medio, pie abajo ---- */
+body { min-height: 100vh; display: flex; flex-direction: column; background: #fff; }
+
+/* ---- ENCABEZADO ---- */
+.encabezado { background: var(--cafe); color: #fff; min-height: 68px; }
+.logo-encabezado { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+
+/* ---- CUERPO: menú a la izquierda + contenido a la derecha ---- */
+.cuerpo { flex: 1; display: flex; }
+
+/* ---- MENÚ LATERAL ---- */
+.menu-lateral {
+    width: 240px; flex-shrink: 0; background: var(--beige);
+    border-right: 1px solid #c9c9bb; flex-direction: column; padding: 1.1rem;
+    
+    /* 🔥 NUEVO: Fija el menú a la pantalla para no perder "Mi cuenta" */
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    overflow-y: auto;
+}
+.menu-opciones { flex: 1; }
+.titulo-grupo {
+    font-weight: 700; color: var(--cafe); border-bottom: 2px solid var(--cafe);
+    margin: 1.2rem 0 .7rem; padding-bottom: .25rem;
+}
+.menu-opciones .titulo-grupo:first-child { margin-top: 0; }
+.btn-menu {
+    display: block; background: #fff; border: 1px solid #d6d6c9; border-radius: .45rem;
+    padding: .6rem .85rem; margin-bottom: .55rem; color: #222; text-decoration: none;
+}
+.btn-menu:hover { background: var(--crema); color: #000; }
+.btn-menu.activo { background: var(--cafe); color: #fff; }       /* sección donde estás */
+.btn-menu.salir:hover { background: #dc3545; color: #fff; }
+.menu-cuenta { border-top: 1px solid #c2c2b3; margin-top: 1rem; }
+
+/* ---- CONTENIDO ---- */
+.contenido { flex: 1; padding: 1.8rem; min-width: 0; }
+.titulo-pagina { color: var(--cafe); font-weight: 700; margin-bottom: 1.2rem; }
+
+/* ---- Pantalla de bienvenida ---- */
+.bienvenida { text-align: center; padding: 1.5rem 0; }
+.bienvenida h2 { color: var(--cafe); font-weight: 700; font-size: 2.4rem; }
+.logo-bienvenida { width: 210px; border-radius: .6rem; margin: 1.2rem 0; }
+
+/* ---- PIE (solo si MOSTRAR_PIE = true) ---- */
+.pie { background: var(--cafe); color: #fff; text-align: center; padding: 1rem; }
+
+/* ---- Botón principal café ---- */
+.btn-cafe { background: var(--cafe); border-color: var(--cafe); color: #fff; }
+.btn-cafe:hover { background: var(--cafe-oscuro); border-color: var(--cafe-oscuro); color: #fff; }
+
+/* ---- Pantalla de COBRO ---- */
+.tarjeta-producto { min-height: 84px; }
+.lista-productos { max-height: 62vh; overflow-y: auto; }
+.total-grande { font-size: 2rem; font-weight: 700; color: var(--cafe); }
+
+/* ---- Ticket (recibo) ---- */
+.ticket { max-width: 380px; margin: 0 auto; font-family: "Courier New", monospace; }
+
+/* ---- Al imprimir un ticket: se ocultan menú y encabezado ---- */
+@media print {
+    .encabezado, .menu-lateral, .pie, .no-imprimir { display: none !important; }
+    .contenido { padding: 0; }
+}
+
+/* ---- Celular: el menú pasa arriba ---- */
+@media (max-width: 767.98px) {
+    .cuerpo { flex-direction: column; }
+    .menu-lateral { width: 100%; border-right: 0; border-bottom: 1px solid #c9c9bb; }
+}
