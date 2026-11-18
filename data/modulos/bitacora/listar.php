@@ -23,6 +23,7 @@ $titulo = "Bitácora del sistema";
 include RUTA_INCLUDES . '/encabezado.php';
 ?>
 <form method="get" class="d-flex gap-2 mb-3" style="max-width:420px">
+    <label for="q_busqueda" class="visually-hidden">Buscar</label>
     <input type="text" class="form-control" name="q" value="<?= e($q) ?>" placeholder="Buscar usuario, acción o detalle...">
     <button class="btn btn-outline-secondary">Buscar</button>
 </form>

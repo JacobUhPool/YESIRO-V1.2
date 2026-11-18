@@ -77,6 +77,7 @@ function requiere_pin_jefe() {
                     <h4 class="mb-3 text-danger">🔐 Acceso Confidencial</h4>
                     <p class="text-muted">Por seguridad, ingresa tu código de verificación para visualizar los reportes financieros.</p>
                     <form method="post">
+                        <label for="q_busqueda" class="visually-hidden">Buscar</label>
                         <input type="password" name="pin_seguridad" class="form-control text-center mb-3 fs-3" placeholder="****" required>
                         <button class="btn btn-danger w-100">Verificar identidad</button>
                     </form>

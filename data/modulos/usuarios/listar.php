@@ -24,6 +24,7 @@ include RUTA_INCLUDES . '/encabezado.php';
             <div class="row g-3">
                 <div class="col-md-6">
                     <label for="nombre" class="form-label">Nombre</label>
+                    <label for="q_busqueda" class="visually-hidden">Buscar</label>
                     <input type="text" class="form-control" name="nombre" id="nombre" required>
                 </div>
                 <div class="col-md-6">
