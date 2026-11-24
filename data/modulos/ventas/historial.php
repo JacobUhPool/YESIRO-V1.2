@@ -42,7 +42,6 @@ $titulo = $ve_todas ? "Historial de ventas" : "Mis ventas";
 include RUTA_INCLUDES . '/encabezado.php';
 ?>
 <form method="get" class="d-flex gap-2 mb-3" style="max-width:340px">
-    <label for="q_busqueda" class="visually-hidden">Buscar</label>
     <input type="date" class="form-control" name="fecha" value="<?= e($fecha) ?>">
     <button class="btn btn-outline-secondary">Ver</button>
 </form>

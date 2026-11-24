@@ -24,9 +24,7 @@ include RUTA_INCLUDES . '/encabezado.php';
 ?>
 <div class="d-flex flex-wrap gap-2 mb-3">
     <form method="get" class="d-flex gap-2">
-        <input type="hidden" name="tipo" value="<?= e($tipo) ?>">
-        <label for="q_busqueda" class="visually-hidden">Buscar</label>
-        <input type="text" class="form-control" name="q" id="q_busqueda" value="<?= e($q) ?>" placeholder="Buscar...">
+        <input type="text" class="form-control" name="q" value="<?= e($q) ?>" placeholder="Buscar...">
         <button class="btn btn-outline-secondary">Buscar</button>
     </form>
     <?php if ($puede_agregar): ?>
